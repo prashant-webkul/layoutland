@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Load Images priorly</title>
+    <style>
+        .image-container {
+            height: 500px;
+            width: 1000px;
+        }
+        img {
+            position:absolute;
+            height: 450px;
+            width: 950px;
+            display: none;
+        }
+
+        .show{
+            animation: slide-in .25s ease-in-out forwards;
+            display: block;
+        }
+
+        @keyframes slide-in{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        /* .test-image1 {
+            position:absolute;
+        }
+        .test-image2 {
+            position:absolute;
+        }
+        .test-image3 {
+            position:absolute;
+        } */
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img class="test-image show" src="shanghai.jpg" />
+        <img class="test-image" src="sll.jpg" />
+        <img class="test-image" src="splash.jpg" />
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+
+
+    </script>
+
+    <script>
+    var j = 0;
+    var imgCon = document.querySelector(".image-container");
+    var imgs = document.querySelectorAll(".test-image");
+    imgCon.addEventListener("click",function (){
+        for(var i=0; i < imgs.length; i++){
+            if(imgs[i].classList.contains("show")){
+                imgs[i].classList.remove("show");
+            }
+        }
+        j++;
+        imgs[j].classList.add("show");
+        if(j < img.length){
+
+        }
+    });
+    </script>
+
+</body>
+</html>
